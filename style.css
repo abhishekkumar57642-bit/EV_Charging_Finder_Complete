@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+body { margin:0; font-family:Arial,Helvetica,sans-serif; background:#f3f6f8; color:#17202a; }
+.topbar { background:#0b7a4b; color:white; padding:18px 5%; display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.topbar h1 { margin:0 0 5px; font-size:27px; }
+.topbar p { margin:0; opacity:.9; }
+.container { width:min(1400px,94%); margin:20px auto; }
+.controls { background:white; padding:15px; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,.08); display:grid; grid-template-columns:1fr 190px 180px 110px; gap:10px; }
+input,select,button { font:inherit; }
+input,select { width:100%; border:1px solid #d5dce0; border-radius:9px; padding:11px 12px; background:white; }
+.primary-btn { border:0; border-radius:9px; padding:11px 15px; background:#0b7a4b; color:white; cursor:pointer; font-weight:700; }
+.primary-btn:hover { opacity:.9; }
+.status { margin:12px 0; padding:10px 14px; background:white; border-radius:9px; color:#53636b; }
+.layout { display:grid; grid-template-columns:1.7fr 1fr; gap:15px; }
+#map { height:650px; border-radius:14px; overflow:hidden; box-shadow:0 3px 12px rgba(0,0,0,.08); }
+.panel { height:650px; background:white; border-radius:14px; overflow:hidden; box-shadow:0 3px 12px rgba(0,0,0,.08); }
+.panel-header { display:flex; justify-content:space-between; align-items:center; padding:15px 18px; border-bottom:1px solid #e5e9eb; }
+.panel-header h2 { margin:0; font-size:20px; }
+#count { background:#e8f7ef; color:#0b7a4b; padding:5px 10px; border-radius:20px; font-weight:bold; }
+.station-list { height:calc(100% - 64px); overflow-y:auto; }
+.station { padding:15px 18px; border-bottom:1px solid #edf0f1; }
+.station:hover { background:#f7faf8; }
+.station h3 { margin:0 0 6px; font-size:17px; }
+.station p { margin:5px 0; color:#5d6b72; font-size:14px; }
+.badge { display:inline-block; margin-top:5px; padding:4px 8px; background:#eaf4ff; color:#1261a0; border-radius:6px; font-size:12px; font-weight:700; }
+.station-actions { display:flex; gap:8px; margin-top:10px; }
+.small-btn { display:inline-block; text-decoration:none; border:0; padding:8px 10px; border-radius:7px; background:#0b7a4b; color:white; cursor:pointer; font-size:13px; font-weight:bold; }
+.empty { padding:30px; text-align:center; color:#6c777d; }
+@media (max-width:900px) { .controls{grid-template-columns:1fr 1fr;} .layout{grid-template-columns:1fr;} #map,.panel{height:500px;} .topbar{flex-direction:column;align-items:stretch;} }
+@media (max-width:550px) { .controls{grid-template-columns:1fr;} }
