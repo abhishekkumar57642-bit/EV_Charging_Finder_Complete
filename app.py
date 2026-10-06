@@ -2,7 +2,7 @@
     from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
-OCM_API_KEY = 45900e0c-04e6-4f82-abe2-13dbc8187858
+OCM_API_KEY = "45900e0c-04e6-4f82-abe2-13dbc8187858"
 @app.route("/")
 def index():
     return render_template("index.html")
