@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charging Finder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+    <div>
+        <h1>⚡ EV Charging Finder</h1>
+        <p>Find nearby electric vehicle charging stations</p>
+    </div>
+    <button id="locationBtn" class="primary-btn">📍 Use My Location</button>
+</header>
+
+<main class="container">
+    <section class="controls">
+        <input id="searchInput" type="text" placeholder="Search station, city or address...">
+        <select id="chargerFilter">
+            <option value="">All charger types</option>
+            <option value="DC Fast">DC Fast</option>
+            <option value="AC">AC</option>
+            <option value="CCS2">CCS2</option>
+            <option value="CHADEMO">CHAdeMO</option>
+            <option value="J1772">J1772</option>
+            <option value="TYPE2">Type 2</option>
+        </select>
+        <select id="radiusFilter">
+            <option value="5">Within 5 km</option>
+            <option value="10">Within 10 km</option>
+            <option value="25">Within 25 km</option>
+            <option value="50" selected>Within 50 km</option>
+            <option value="100">Within 100 km</option>
+        </select>
+        <button id="searchBtn" class="primary-btn">Search</button>
+    </section>
+
+    <section class="status" id="status">
+        Loading live charging stations near Patna. Click "Use My Location" for stations near you.
+    </section>
+    <div class="live-note">🟢 Live station data • Availability is shown when the provider reports it.</div>
+
+    <section class="layout">
+        <div id="map"></div>
+        <aside class="panel">
+            <div class="panel-header">
+                <h2>Charging Stations</h2>
+                <span id="count">0</span>
+            </div>
+            <div id="stationList" class="station-list"></div>
+        </aside>
+    </section>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+<footer class="footer">Live EV station data powered by Google Places API (New). Map tiles © OpenStreetMap contributors.</footer>
+</body>
+</html>
